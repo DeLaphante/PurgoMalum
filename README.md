@@ -25,6 +25,17 @@ Alternatively, you can run tests from the command line:
 dotnet test
 ```
 
+### Steps (GitHub Actions – Manual Trigger)
+
+In addition to running locally, you can also **manually trigger the test suite in GitHub Actions**:
+
+1. Go to the **Actions** tab of this repository.
+2. Select the workflow named **Pipeline Tests**.
+3. Click the **Run workflow** button in the top-right corner.
+4. Choose the branch (default is `main`) and click **Run workflow**.
+
+This will start the pipeline immediately without waiting for a push, pull request, or scheduled run.
+
 ## Test Reports
 
 This project is integrated with **GitHub Actions** to automatically generate and publish test reports.
@@ -44,9 +55,10 @@ There are two ways to access the latest test reports:
 
    * The latest HTML report is published to GitHub Pages.
    * Visit:
-     https://delaphante.github.io/PurgoMalum/
+     [https://delaphante.github.io/PurgoMalum/](https://delaphante.github.io/PurgoMalum/)
 
 ### Notes
 
 * Artifacts are always available per-run, while GitHub Pages hosts the most recent report.
 * The GitHub Pages URL is automatically updated after each workflow run.
+* Manual triggers can also be used to generate and publish reports on demand.
