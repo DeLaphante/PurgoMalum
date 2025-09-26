@@ -44,11 +44,7 @@ There are two ways to access the latest test reports:
 
    * The latest HTML report is published to GitHub Pages.
    * Visit:
-
-     ```
      https://delaphante.github.io/PurgoMalum/
-     ```
-   * The main report is available at `index.html`.
 
 ### Notes
 
