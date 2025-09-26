@@ -22,7 +22,7 @@ This project tests the PurgoMalum service, which provides profanity filtering fo
 Alternatively, you can run tests from the command line:
 
 ```bash
-dotnet test
+dotnet test --verbosity normal --configuration Release
 ```
 
 ### Steps (GitHub Actions – Manual Trigger)
@@ -62,3 +62,7 @@ There are two ways to access the latest test reports:
 * Artifacts are always available per-run, while GitHub Pages hosts the most recent report.
 * The GitHub Pages URL is automatically updated after each workflow run.
 * Manual triggers can also be used to generate and publish reports on demand.
+
+Demo Video
+
+[PurgoMalum.webm](https://github.com/user-attachments/assets/55da64ef-a938-4163-aedd-3e695dfd981b)
