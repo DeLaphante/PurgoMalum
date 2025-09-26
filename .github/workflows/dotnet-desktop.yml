@@ -1,0 +1,103 @@
+# This workflow will build, test, and deploy reports to GitHub Pages
+name: Pipeline Tests
+
+on:
+  schedule:
+    - cron: '35 5 * * *'
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    
+    - name: Cache NuGet packages
+      id: cache-nuget
+      uses: actions/cache@v4
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj', '**/*.fsproj') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
+          
+    - name: Cache .NET build output
+      uses: actions/cache@v4
+      with:
+        path: |
+            **/bin
+            **/obj
+        key: build-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+        restore-keys: |
+            build-${{ runner.os }}-
+            
+    - name: Restore dependencies
+      run: dotnet restore --use-current-runtime
+      
+    - name: Check if build output is cached
+      id: build-cache-check
+      run: |
+          if [ -d "/home/runner/work/PurgoMalum/PurgoMalum/PurgoMalum/bin/Release" ]; then
+              echo "build=false" >> $GITHUB_ENV
+          else
+            echo "build=true" >> $GITHUB_ENV
+          fi
+
+    - name: Build
+      if: env.build == 'true'
+      run: dotnet build --no-restore --configuration Release
+
+    - name: Test
+      run: dotnet test --no-build --verbosity normal --configuration Release
+
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with: 
+        name: Reports
+        path: /home/runner/work/PurgoMalum/PurgoMalum/PurgoMalum/bin/Release/net8.0/Reports
+
+  deploy:
+    needs: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Download Reports artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: Reports
+          path: ./public
+
+      - name: Rename report HTML to index.html
+        run: |
+          if ls ./public/Results/*.html 1> /dev/null 2>&1; then
+            file=$(ls ./public/Results/*.html | head -n 1)
+            mv "$file" ./public/index.html
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
