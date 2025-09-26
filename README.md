@@ -1,4 +1,4 @@
-# PurgoMalumAPI Test Suite
+# PurgoMalum Test Suite
 
 ## Overview
 
