@@ -68,6 +68,7 @@ There are two ways to access the latest test reports:
 [PurgoMalum2.webm](https://github.com/user-attachments/assets/2206c505-d0ba-4e01-8eae-559ae4d51344)
 
 
-### How to run tests CI/CD
+### How to run tests in CI/CD
 
+[PurgoMalum3.webm](https://github.com/user-attachments/assets/6e36c17f-38ed-4bf7-8ac9-86957abd40f9)
 
