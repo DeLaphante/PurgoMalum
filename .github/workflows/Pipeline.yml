@@ -71,7 +71,7 @@ jobs:
         name: Reports
         path: /home/runner/work/PurgoMalum/PurgoMalum/PurgoMalum/bin/Release/net8.0/Reports
 
-  deploy:
+  Publish:
     needs: Test
     if: always()  
     runs-on: ubuntu-latest
