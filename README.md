@@ -63,6 +63,11 @@ There are two ways to access the latest test reports:
 * The GitHub Pages URL is automatically updated after each workflow run.
 * Manual triggers can also be used to generate and publish reports on demand.
 
-Demo Video
+### How to run tests locally
 
-[PurgoMalum.webm](https://github.com/user-attachments/assets/55da64ef-a938-4163-aedd-3e695dfd981b)
+[PurgoMalum2.webm](https://github.com/user-attachments/assets/2206c505-d0ba-4e01-8eae-559ae4d51344)
+
+
+### How to run tests CI/CD
+
+
