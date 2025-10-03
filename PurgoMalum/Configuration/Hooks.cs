@@ -28,7 +28,7 @@ namespace PurgoMalum.Configuration
         [BeforeScenario]
         void Launch()
         {
-            _Config.Launch(_FeatureContext, _ScenarioContext, ConfigManager.RS_User, ConfigManager.RS_Key);
+            _Config.Launch(_FeatureContext, _ScenarioContext, null, null);
         }
 
         [BeforeFeature]

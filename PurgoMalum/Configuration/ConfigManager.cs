@@ -16,9 +16,5 @@ namespace PurgoMalum.Configuration
             _Configuration = builder.Build();
 
         }
-
-        public static string RS_User => _Configuration["RS_User"];
-        public static string RS_Key => _Configuration["RS_Key"];
-
     }
 }
