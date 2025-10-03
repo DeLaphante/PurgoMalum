@@ -4,6 +4,8 @@
 
 This project tests the PurgoMalum service, which provides profanity filtering for text via JSON, XML, and plain endpoints. The test suite uses [Reqnroll](https://reqnroll.net/) (a fork of SpecFlow) for BDD-style feature testing, integrated with MSTest as the test runner. Tests are written in Gherkin syntax and cover core functionality, error handling, and optional parameters.
 
+[![Pipeline Tests](https://github.com/DeLaphante/PurgoMalum/actions/workflows/Pipeline.yml/badge.svg)](https://github.com/DeLaphante/PurgoMalum/actions/workflows/Pipeline.yml)
+
 ## Running the Tests
 
 ### Prerequisites
