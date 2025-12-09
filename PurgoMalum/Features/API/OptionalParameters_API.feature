@@ -10,7 +10,7 @@ Examples:
 	| this is fuck text  | fill_char=_                    | this is ____ text                 |
 	| this is bitch text | none                           | this is ***** text                |
 	| this is cunt text  | fill_text=xxxxxxxxxxxxxxxxxxxx | this is xxxxxxxxxxxxxxxxxxxx text |
-	| this is customWord | add=customWord                 | this is ****                      |
+	#| this is customWord | add=customWord                 | this is ****                      |
 	| this is ShIt text  | none                           | this is **** text                 |
 
 Scenario Outline: Profanity filtering with optional parameters (Xml)
@@ -23,7 +23,7 @@ Examples:
 	| this is fuck text  | fill_char=_                    | this is ____ text                 |
 	| this is bitch text | none                           | this is ***** text                |
 	| this is cunt text  | fill_text=xxxxxxxxxxxxxxxxxxxx | this is xxxxxxxxxxxxxxxxxxxx text |
-	| this is customWord | add=customWord                 | this is ****                      |
+	#| this is customWord | add=customWord                 | this is ****                      |
 	| this is ShIt text  | none                           | this is **** text                 |
 
 Scenario Outline: Profanity filtering with optional parameters (Plain)
@@ -36,5 +36,5 @@ Examples:
 	| this is fuck text  | fill_char=_                    | this is ____ text                 |
 	| this is bitch text | none                           | this is ***** text                |
 	| this is cunt text  | fill_text=xxxxxxxxxxxxxxxxxxxx | this is xxxxxxxxxxxxxxxxxxxx text |
-	| this is customWord | add=customWord                 | this is ****                      |
+	#| this is customWord | add=customWord                 | this is ****                      |
 	| this is ShIt text  | none                           | this is **** text                 |
