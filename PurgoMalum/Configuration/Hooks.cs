@@ -41,7 +41,6 @@ namespace PurgoMalum.Configuration
         void AfterScenario()
         {
             _Config.AfterScenario(_ScenarioContext);
-
         }
 
         [AfterStep]

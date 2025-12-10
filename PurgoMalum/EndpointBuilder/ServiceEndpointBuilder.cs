@@ -21,6 +21,5 @@
         {
             return "service/containsprofanity";
         }
-
     }
 }
